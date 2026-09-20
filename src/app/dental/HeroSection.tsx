@@ -14,7 +14,7 @@ interface HeroProps {
   - No camera / unrelated imagery
   - No mismatched before/after people
   - Scroll-driven "smile whitening" using CSS filters + light sweep
-  - Warm ivory + deep navy + restrained turquoise palette
+  - Warm ivory + logo blue palette
 */
 
 // const HERO_IMG =

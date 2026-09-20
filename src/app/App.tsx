@@ -12,6 +12,7 @@ import { ServicesSection } from "./dental/ServicesSection";
 import { PracticeSection } from "./dental/PracticeSection";
 import { DoctorsSection } from "./dental/DoctorsSection";
 import { StaffSection } from "./dental/StaffSection";
+import { LocationsSection } from "./dental/LocationsSection";
 import { ReviewsSection } from "./dental/ReviewsSection";
 import { BookingWizard } from "./dental/BookingWizard";
 import { FaqSection } from "./dental/FaqSection";
@@ -37,6 +38,7 @@ export default function App() {
         <PracticeSection />
         <DoctorsSection />
         <StaffSection />
+        <LocationsSection onBooking={() => setBookingOpen(true)} />
         <ReviewsSection />
         <FaqSection />
         <FinalCTA onBooking={() => setBookingOpen(true)} />

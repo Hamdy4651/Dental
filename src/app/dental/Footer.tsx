@@ -16,6 +16,7 @@ const navLinks = [
   { href: "#behandlungen", label: "Behandlungen" },
   { href: "#vorher-nachher", label: "Vorher & Nachher" },
   { href: "#team", label: "Team" },
+  { href: "#standorte", label: "Standorte" },
   { href: "#bewertungen", label: "Bewertungen" },
   { href: "#faq", label: "FAQ" },
   { href: "#kontakt", label: "Kontakt" },
