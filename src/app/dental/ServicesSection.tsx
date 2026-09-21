@@ -16,7 +16,6 @@ import {
   Syringe,
   CalendarDays,
   Clock3,
-  Euro,
 } from "lucide-react";
 
 interface Service {
@@ -24,7 +23,6 @@ interface Service {
   number: string;
   title: string;
   description: string;
-  price: string;
   duration: string;
   image: string;
   icon: keyof typeof iconMap;
@@ -58,7 +56,6 @@ const services: Service[] = [
     title: "Zahnuntersuchungen & Diagnostik",
     description:
       "Gründliche Untersuchung Ihrer Zähne, Ihres Zahnfleisches und der gesamten Mundgesundheit.",
-    price: "Preis nach Beratung",
     duration: "ca. 20 Min.",
     // Dentist examining a patient with a dental scanner
     image:
@@ -72,7 +69,6 @@ const services: Service[] = [
     title: "Professionelle Zahnreinigung",
     description:
       "Entfernung von Belägen und Zahnstein für ein sauberes, frisches und gepflegtes Lächeln.",
-    price: "ab 90 €",
     duration: "ca. 45 bis 60 Min.",
     // Woman having her teeth treated by a dentist
     image:
@@ -86,7 +82,6 @@ const services: Service[] = [
     title: "Kinderprophylaxe & Vorsorge",
     description:
       "Kindgerechte Vorsorge und individuelle Beratung für gesunde Zähne von Anfang an.",
-    price: "nach Versicherungsleistung",
     duration: "ca. 20 bis 30 Min.",
     // Bright, friendly orange dental chair
     image:
@@ -100,7 +95,6 @@ const services: Service[] = [
     title: "Kariesbehandlung & Füllungen",
     description:
       "Schonende Behandlung von Karies und hochwertige Füllungen für Funktion und Ästhetik.",
-    price: "Preis nach Befund",
     duration: "ca. 30 bis 60 Min.",
     // Two dentists performing a procedure on a patient
     image:
@@ -114,7 +108,6 @@ const services: Service[] = [
     title: "Zahnschmerzen & Entzündungen",
     description:
       "Schnelle Untersuchung und gezielte Behandlung bei akuten Schmerzen und Entzündungen.",
-    price: "nach Untersuchung",
     duration: "ca. 20 bis 45 Min.",
     // Dentist examining a patient with a dental mirror
     image:
@@ -128,7 +121,6 @@ const services: Service[] = [
     title: "Zahnextraktionen",
     description:
       "Schonende Entfernung von nicht erhaltungswürdigen oder stark geschädigten Zähnen.",
-    price: "Preis nach Befund",
     duration: "ca. 20 bis 45 Min.",
     // Dentist working on a patient
     image:
@@ -142,7 +134,6 @@ const services: Service[] = [
     title: "Wurzelkanalbehandlungen",
     description:
       "Präzise Behandlung entzündeter Zahnwurzeln mit dem Ziel, den natürlichen Zahn zu erhalten.",
-    price: "Preis nach Befund",
     duration: "ca. 60 bis 90 Min.",
     // Dentist in blue gloves examining a patient's teeth
     image:
@@ -156,7 +147,6 @@ const services: Service[] = [
     title: "Zahnfleischbehandlung & Vorsorge",
     description:
       "Früherkennung und Behandlung von Zahnfleischerkrankungen für langfristig gesunde Zähne.",
-    price: "Preis nach Befund",
     duration: "ca. 30 bis 60 Min.",
     // Dental mirror in the foreground, blurred dental chair behind
     image:
@@ -170,7 +160,6 @@ const services: Service[] = [
     title: "Kronen & Brücken",
     description:
       "Hochwertiger Zahnersatz zur Wiederherstellung von Funktion, Stabilität und natürlicher Ästhetik.",
-    price: "ab 700 €",
     duration: "mehrere Termine",
     // Close-up of a mouth with natural white teeth
     image:
@@ -184,7 +173,6 @@ const services: Service[] = [
     title: "Zahnprothesen",
     description:
       "Individuell angepasste Lösungen für Komfort, Funktion und ein sicheres Gefühl im Alltag.",
-    price: "Preis nach Planung",
     duration: "mehrere Termine",
     // Hand holding a denture
     image:
@@ -198,7 +186,6 @@ const services: Service[] = [
     title: "Bleaching & Ästhetische Zahnmedizin",
     description:
       "Professionelle Zahnaufhellung und ästhetische Behandlungen für ein natürlich schönes Lächeln.",
-    price: "ab 300 €",
     duration: "ca. 60 bis 90 Min.",
     // Smiling woman, close-up
     image:
@@ -212,7 +199,6 @@ const services: Service[] = [
     title: "Digitale Röntgendiagnostik",
     description:
       "Moderne Röntgenaufnahmen zur präzisen Diagnostik und sicheren Behandlungsplanung.",
-    price: "Preis nach Untersuchung",
     duration: "ca. 10 bis 20 Min.",
     // Dentist examining dental X-rays on a light box
     image:
@@ -226,7 +212,6 @@ const services: Service[] = [
     title: "Beratung zur Mundhygiene",
     description:
       "Individuelle Tipps und Empfehlungen für die tägliche Zahnpflege und langfristige Mundgesundheit.",
-    price: "im Beratungstermin",
     duration: "ca. 15 bis 30 Min.",
     // Gloved hand holding a toothbrush
     image:
@@ -240,7 +225,6 @@ const services: Service[] = [
     title: "Zahnimplantate",
     description:
       "Moderne Implantologie zum Ersatz fehlender Zähne für eine stabile und natürlich wirkende Lösung.",
-    price: "Preis nach Planung",
     duration: "individuell",
     // Dental implant model with teeth
     image:
@@ -393,22 +377,8 @@ export function ServicesSection({
                   {service.description}
                 </p>
 
-                {/* Price + Duration */}
-                <div className="mb-6 grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-[#062B67]/6 bg-[#F7F8F6] p-3.5">
-                    <div className="mb-1.5 flex items-center gap-1.5 text-[#0878D1]">
-                      <Euro size={14} />
-
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.16em]">
-                        Preis
-                      </span>
-                    </div>
-
-                    <p className="text-xs font-semibold leading-5 text-[#062B67]">
-                      {service.price}
-                    </p>
-                  </div>
-
+                {/* Duration */}
+                <div className="mb-6">
                   <div className="rounded-2xl border border-[#062B67]/6 bg-[#F7F8F6] p-3.5">
                     <div className="mb-1.5 flex items-center gap-1.5 text-[#0878D1]">
                       <Clock3 size={14} />
@@ -501,9 +471,8 @@ export function ServicesSection({
 
         {/* Disclaimer */}
         <p className="mt-6 text-center text-xs leading-6 text-[#6B7A8D]/75">
-          Die angegebenen Preise und Behandlungszeiten dienen zur
-          Orientierung. Der endgültige Umfang und die Kosten richten
-          sich nach dem individuellen Befund und der Behandlungsplanung.
+          Die angegebenen Behandlungszeiten dienen zur Orientierung und
+          können je nach individuellem Befund variieren.
         </p>
       </div>
     </section>
